@@ -1,7 +1,7 @@
 {
-  "name": "react-star-wars-api-ts",
+  "name": "react-forms",
   "version": "1.0.0",
-  "description": "react-star-wars-api-ts",
+  "description": "react-forms",
   "private": true,
   "scripts": {
     "build": "npm run lint && cross-env NODE_ENV=production webpack --mode production",
@@ -30,7 +30,7 @@
     "css-loader": "^6.2.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-airbnb-typescript": "^13.0.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
