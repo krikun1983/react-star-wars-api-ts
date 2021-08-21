@@ -1,4 +1,10 @@
+import { HTTP, HTTPS } from 'constants/api';
 import { PeopleResultsBody } from 'types/people-list';
+
+export const changeHTTP = (url: string): string => {
+  const result = url ? url.replace(HTTP, HTTPS) : url;
+  return result;
+};
 
 const getApiResource = async (url: string): Promise<boolean | PeopleResultsBody> => {
   try {

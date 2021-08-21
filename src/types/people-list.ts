@@ -19,6 +19,8 @@ export interface SwapiPeopleType {
 
 export interface PeopleResultsBody {
   results: SwapiPeopleType[];
+  next: string;
+  previous: string;
 }
 
 export type PeopleListState = {
@@ -29,4 +31,11 @@ export type PeopleListState = {
 
 export type PeopleListStateProps = {
   people: PeopleListState[];
+};
+
+export type PropsPeopleNavigation = {
+  gerResource: (url: string) => Promise<void>;
+  prevPage: string;
+  nextPage: string;
+  currentPage: number;
 };
