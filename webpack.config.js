@@ -92,6 +92,17 @@ module.exports = {
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
   ],
   resolve: {
+    alias: {
+      types: path.resolve(__dirname, './src/types/'),
+      components: path.resolve(__dirname, './src/components/'),
+      constants: path.resolve(__dirname, './src/constants/'),
+      utils: path.resolve(__dirname, './src/utils/'),
+      services: path.resolve(__dirname, './src/services/'),
+      containers: path.resolve(__dirname, './src/containers/'),
+      assets: path.resolve(__dirname, './src/assets/'),
+      routes: path.resolve(__dirname, './src/routes/'),
+      static: path.resolve(__dirname, './src/static/'),
+    },
     extensions: ['.tsx', '.ts', '.js'],
   },
   ...devServer(isDev),

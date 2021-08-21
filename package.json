@@ -1,7 +1,7 @@
 {
-  "name": "react-forms",
+  "name": "react-star-wars-api-typescript",
   "version": "1.0.0",
-  "description": "react-forms",
+  "description": "React Star Wars Api TypeScript",
   "private": true,
   "scripts": {
     "build": "npm run lint && cross-env NODE_ENV=production webpack --mode production",
@@ -77,5 +77,9 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0"
-  }
+  },
+  "moduleDirectories": [
+    ".",
+    "node_modules"
+  ]
 }

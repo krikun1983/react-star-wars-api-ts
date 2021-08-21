@@ -1,5 +1,5 @@
 import React from 'react';
-import { PeopleListStateProps } from '../../../types/people-list';
+import { PeopleListStateProps } from 'types/people-list';
 
 const PeopleList = ({ people }: PeopleListStateProps): JSX.Element => {
   return (

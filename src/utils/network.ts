@@ -1,4 +1,4 @@
-import { PeopleResultsBody } from '../types/people-list';
+import { PeopleResultsBody } from 'types/people-list';
 
 const getApiResource = async (url: string): Promise<boolean | PeopleResultsBody> => {
   try {

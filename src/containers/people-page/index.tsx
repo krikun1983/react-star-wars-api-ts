@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import ErrorMessage from '../../components/ErrorMessage';
-import PeopleList from '../../components/people-page/people-list';
-import { API_PEOPLE } from '../../constants/api';
-import { getPeopleId, getPeopleImages } from '../../services/getPeopleData';
-import { PeopleListState, PeopleResultsBody } from '../../types/people-list';
-import getApiResource from '../../utils/network';
+import ErrorMessage from 'components/ErrorMessage';
+import PeopleList from 'components/people-page/people-list';
+import { API_PEOPLE } from 'constants/api';
+import { getPeopleId, getPeopleImages } from 'services/getPeopleData';
+import { PeopleListState, PeopleResultsBody } from 'types/people-list';
+import getApiResource from 'utils/network';
 
 const PeoplePage = (): JSX.Element => {
   const [people, setPeople] = useState<PeopleListState[]>([]);

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PeoplePage from './containers/people-page';
-import './assets/scss/app.scss';
+import PeoplePage from 'containers/people-page';
+import 'assets/scss/app.scss';
 
 const App = (): JSX.Element => {
   return (
