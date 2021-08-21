@@ -19,6 +19,7 @@
   },
   "author": "Stanislav Akhmadeev",
   "devDependencies": {
+    "@types/node": "^16.7.1",
     "@types/react": "^17.0.16",
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.1.8",

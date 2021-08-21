@@ -102,6 +102,7 @@ module.exports = {
       assets: path.resolve(__dirname, './src/assets/'),
       routes: path.resolve(__dirname, './src/routes/'),
       static: path.resolve(__dirname, './src/static/'),
+      hooks: path.resolve(__dirname, './src/hooks/'),
     },
     extensions: ['.tsx', '.ts', '.js'],
   },

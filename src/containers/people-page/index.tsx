@@ -5,10 +5,15 @@ import { API_PEOPLE } from 'constants/api';
 import { getPeopleId, getPeopleImages } from 'services/getPeopleData';
 import { PeopleListState, PeopleResultsBody } from 'types/people-list';
 import getApiResource from 'utils/network';
+import useQueryParams from 'hooks/useQueryParams';
 
 const PeoplePage = (): JSX.Element => {
   const [people, setPeople] = useState<PeopleListState[]>([]);
   const [errorApi, setErrorApi] = useState(false);
+
+  const query = useQueryParams();
+  const queryPage = query.get('page');
+
   // fn запрос на сервер
   const gerResource = async (getUrl: string) => {
     const body = await getApiResource(getUrl);
@@ -33,8 +38,8 @@ const PeoplePage = (): JSX.Element => {
   };
 
   useEffect(() => {
-    gerResource(API_PEOPLE);
-  }, []);
+    gerResource(API_PEOPLE + queryPage);
+  }, [queryPage]);
 
   return (
     <>
