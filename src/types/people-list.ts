@@ -16,3 +16,12 @@ export interface SwapiPeopleType {
   created: string;
   edited: string;
 }
+
+export interface PeopleResultsBody {
+  results: SwapiPeopleType[];
+}
+
+export type PeopleListState = {
+  name: string;
+  url: string;
+};

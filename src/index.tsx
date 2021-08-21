@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import getApiResource, { PEOPLE } from './utils/network';
+import PeoplePage from './containers/people-page';
 import './assets/scss/app.scss';
 
-getApiResource(PEOPLE);
-
-const App = (): JSX.Element => <div>Hello</div>;
+const App = (): JSX.Element => {
+  return (
+    <>
+      <PeoplePage />
+    </>
+  );
+};
 
 ReactDOM.render(<App />, document.getElementById('root'));

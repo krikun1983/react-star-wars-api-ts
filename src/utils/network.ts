@@ -1,8 +1,6 @@
-const SWAPI_ROOT = 'https://swapi.dev/api/';
-const SWAPI_PEOPLE = 'people/';
-export const PEOPLE = `${SWAPI_ROOT}${SWAPI_PEOPLE}`;
+import { PeopleResultsBody } from '../types/people-list';
 
-const getApiResource = async (url: string): Promise<boolean> => {
+const getApiResource = async (url: string): Promise<boolean | PeopleResultsBody> => {
   try {
     const response = await fetch(url);
     if (!response.ok) {
