@@ -22,6 +22,11 @@ export interface PeopleResultsBody {
 }
 
 export type PeopleListState = {
+  id: string;
   name: string;
-  url: string;
+  img: string;
+};
+
+export type PeopleListStateProps = {
+  people: PeopleListState[];
 };

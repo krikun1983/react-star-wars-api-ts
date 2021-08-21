@@ -1,0 +1,15 @@
+@import 'variable';
+
+.errors {
+  width: 100%;
+  max-width: 600px;
+  margin: 100px auto 0;
+  color: $color-errors;
+  font-size: 26px;
+  line-height: 1.7em;
+  text-align: center;
+  text-shadow: 0 0 2px $color-white;
+  -webkit-text-stroke-color: $color-errors;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-fill-color: transparent;
+}

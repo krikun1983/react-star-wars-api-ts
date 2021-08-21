@@ -1,0 +1,36 @@
+@import 'basic';
+@import 'variable';
+
+.list__container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list__item {
+  width: 190px;
+  margin: 20px;
+  background-color: $color-white;
+  border-radius: $border-radius-small;
+  cursor: pointer;
+
+  &_link {
+    color: $color-black;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &_photo {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: $border-radius-small $border-radius-small 0 0;
+  }
+
+  &_name {
+    padding: 5px 0;
+    color: $color-black;
+    font-weight: bold;
+  }
+}

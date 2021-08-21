@@ -1,1 +1,63 @@
 @import 'basic';
+@import 'people-page';
+@import 'variable';
+@import 'errors';
+@import 'not-found';
+
+img {
+  display: block;
+}
+
+.header__text {
+  color: $theme-default-header;
+  font-size: 26px;
+  line-height: 1.7em;
+  text-shadow: 0 0 2px $color-black;
+  transition: color $transition;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.list__container {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+
+  a {
+    display: block;
+    min-width: 70px;
+    margin: 0 10px;
+    padding: 8px 10px;
+    color: $color-white;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 0 3px $color-white;
+    text-shadow: 0 0 40px $color-blue;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  a.active {
+    color: $color-violet;
+    border: 2px solid $color-violet;
+  }
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 0;
+}
+
+@media screen and (max-width: 1400px) {
+  .wrapper {
+    padding: 30px;
+  }
+}

@@ -6,7 +6,9 @@ import './assets/scss/app.scss';
 const App = (): JSX.Element => {
   return (
     <>
-      <PeoplePage />
+      <div className="wrapper">
+        <PeoplePage />
+      </div>
     </>
   );
 };
