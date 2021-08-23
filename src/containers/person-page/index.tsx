@@ -1,4 +1,5 @@
 import PersonInfoComponent from 'components/person-page/person-info';
+import PersonLinkBack from 'components/person-page/person-link-back';
 import PersonPhotoComponent from 'components/person-page/person-photo';
 import { API_PERSON } from 'constants/api';
 import React, { useEffect, useState } from 'react';
@@ -32,15 +33,16 @@ const PersonPage = (): JSX.Element => {
         setPersonName((res as PersonInfoApi).name);
         setPersonPhoto(getPeopleImages(id));
 
-        setErrorApi(false);
+        setErrorApi(errorApi);
       } else {
-        setErrorApi(true);
+        setErrorApi(!errorApi);
       }
     })();
   }, []);
 
   return (
     <>
+      <PersonLinkBack />
       <div className="person__wrapper">
         <span className="person__name">{personName}</span>
         <div className="person__container">

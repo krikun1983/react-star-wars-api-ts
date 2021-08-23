@@ -11,9 +11,7 @@ const Header = (): JSX.Element => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/people/?page=1" exact>
-            People
-          </NavLink>
+          <NavLink to="/people/?page=1">People</NavLink>
         </li>
         <li>
           <NavLink to="/not-found" exact>
