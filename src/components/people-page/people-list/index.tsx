@@ -8,7 +8,7 @@ const PeopleList = ({ people }: PeopleListStateProps): JSX.Element => {
       {people.map(({ id, name, img }) => {
         return (
           <li className="list__item" key={id}>
-            <Link to="/" className="list__item_link">
+            <Link to={`/people/${id}`} className="list__item_link">
               <img className="list__item_photo" src={img} alt={name} />
               <p className="list__item_name">{name}</p>
             </Link>
