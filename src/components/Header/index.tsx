@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Header = (): JSX.Element => {
   return (
     <div className="container">
-      <ul className="list__container">
+      <ul className="nav__container">
         <li>
           <NavLink to="/" exact>
             HOME

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { PeopleListStateProps } from 'types/people-list';
 
 const PeopleList = ({ people }: PeopleListStateProps): JSX.Element => {
@@ -7,10 +8,10 @@ const PeopleList = ({ people }: PeopleListStateProps): JSX.Element => {
       {people.map(({ id, name, img }) => {
         return (
           <li className="list__item" key={id}>
-            <button className="list__item_link" type="button">
+            <Link to="/" className="list__item_link">
               <img className="list__item_photo" src={img} alt={name} />
               <p className="list__item_name">{name}</p>
-            </button>
+            </Link>
           </li>
         );
       })}

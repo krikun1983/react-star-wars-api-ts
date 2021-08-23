@@ -28,6 +28,34 @@ img {
   flex-wrap: wrap;
   list-style-type: none;
 
+  &__item {
+    display: block;
+    min-width: 70px;
+    margin: 0 10px;
+    padding: 8px 10px;
+    color: $color-white;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 0 3px $color-white;
+    text-shadow: 0 0 40px $color-blue;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  &__item.active {
+    color: $color-violet;
+    border: 2px solid $color-violet;
+  }
+}
+
+.nav__container {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+
   a {
     display: block;
     min-width: 70px;
