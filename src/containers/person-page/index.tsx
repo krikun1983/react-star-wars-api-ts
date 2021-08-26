@@ -1,13 +1,15 @@
-import PersonFilmsComponent from 'components/person-page/person-films';
 import PersonInfoComponent from 'components/person-page/person-info';
 import PersonLinkBack from 'components/person-page/person-link-back';
 import PersonPhotoComponent from 'components/person-page/person-photo';
+import UiLoading from 'components/UI/UILoading';
 import { API_PERSON } from 'constants/api';
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import { getPeopleImages } from 'services/getPeopleData';
 import { MatchProps, PersonInfoApi, Res } from 'types/person-list';
 import getApiResource from 'utils/network';
+
+const PersonFilmsComponent = React.lazy(() => import('components/person-page/person-films'));
 
 const PersonPage = (): JSX.Element => {
   const [errorApi, setErrorApi] = useState(false);
@@ -49,7 +51,11 @@ const PersonPage = (): JSX.Element => {
         <div className="person__container">
           <PersonPhotoComponent personPhoto={personPhoto} personName={personName} />
           {personInfo && <PersonInfoComponent personInfo={personInfo} />}
-          {personFilms && <PersonFilmsComponent personFilms={personFilms} />}
+          {personFilms && (
+            <Suspense fallback={<UiLoading theme="blue" isShadow />}>
+              <PersonFilmsComponent personFilms={personFilms} />
+            </Suspense>
+          )}
         </div>
       </div>
     </>
