@@ -1,3 +1,4 @@
+import PersonFilmsComponent from 'components/person-page/person-films';
 import PersonInfoComponent from 'components/person-page/person-info';
 import PersonLinkBack from 'components/person-page/person-link-back';
 import PersonPhotoComponent from 'components/person-page/person-photo';
@@ -13,6 +14,7 @@ const PersonPage = (): JSX.Element => {
   const [personInfo, setPersonInfo] = useState<Res[] | null>(null);
   const [personName, setPersonName] = useState<string>('');
   const [personPhoto, setPersonPhoto] = useState<string>('');
+  const [personFilms, setPersonFilms] = useState<string[]>([]);
 
   const match = useRouteMatch<MatchProps>();
 
@@ -32,8 +34,7 @@ const PersonPage = (): JSX.Element => {
         ]);
         setPersonName((res as PersonInfoApi).name);
         setPersonPhoto(getPeopleImages(id));
-
-        setErrorApi(errorApi);
+        setPersonFilms((res as PersonInfoApi).films);
       } else {
         setErrorApi(!errorApi);
       }
@@ -48,6 +49,7 @@ const PersonPage = (): JSX.Element => {
         <div className="person__container">
           <PersonPhotoComponent personPhoto={personPhoto} personName={personName} />
           {personInfo && <PersonInfoComponent personInfo={personInfo} />}
+          {personFilms && <PersonFilmsComponent personFilms={personFilms} />}
         </div>
       </div>
     </>

@@ -80,3 +80,43 @@
     object-position: center center;
   }
 }
+
+.person-films_wrapper {
+  margin-left: 30px;
+  padding: 20px 0;
+}
+
+.person-films__list {
+  margin: 0;
+  padding: 0;
+}
+
+.person-films__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+  color: $color-white;
+
+  &_episode {
+    padding: 5px;
+    background-color: $color-red;
+    border-radius: 3px;
+  }
+
+  &_colon {
+    width: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &_title {
+    text-shadow: 0 0 2px $color-white, 0 0 30px $color-errors;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .person-films_wrapper {
+    width: 100%;
+    margin-left: 0;
+  }
+}

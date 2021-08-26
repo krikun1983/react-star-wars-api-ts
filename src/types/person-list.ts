@@ -11,9 +11,15 @@ export type PersonInfoApi = {
   birth_year: string;
   gender: string;
   name: string;
+  films: string[];
 };
 
 export type Res = {
   title: string;
   data: string;
+};
+
+export type PersonFilmsPromise = {
+  title: string;
+  episode_id: number;
 };

@@ -4,7 +4,7 @@ import iconBack from 'assets/images/back.svg';
 
 const PersonLinkBack = (): JSX.Element => {
   const history = useHistory();
-  const handleGoBack = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleGoBack = () => {
     history.go(-1);
   };
   return (
