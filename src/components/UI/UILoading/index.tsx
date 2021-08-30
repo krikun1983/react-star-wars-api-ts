@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import loaderWhite from 'assets/images/loading/loader-white.svg';
 import loaderBlack from 'assets/images/loading/loader-black.svg';
 import loaderBlue from 'assets/images/loading/loader-blue.svg';
-import { string } from 'prop-types';
 
 type LoadingProps = {
   theme: string;

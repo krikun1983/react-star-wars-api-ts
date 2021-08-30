@@ -63,10 +63,13 @@
   "main": "webpack.config.js",
   "license": "ISC",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.1",
+    "@types/lodash": "^4.14.172",
     "@types/react-redux": "^7.1.18",
     "history": "^5.0.0",
     "husky": "^7.0.1",
     "lint-staged": "^11.1.2",
+    "lodash": "^4.17.21",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

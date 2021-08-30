@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ErrorMessage from 'components/ErrorMessage';
+import ErrorMessage from 'components/errorMessage';
 import PeopleList from 'components/people-page/people-list';
 import { API_PEOPLE } from 'constants/api';
 import { getPeopleId, getPeopleImages, getPeoplePageId } from 'services/getPeopleData';

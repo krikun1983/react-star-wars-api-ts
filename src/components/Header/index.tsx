@@ -1,3 +1,4 @@
+import Favorite from 'components/favorite';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -19,6 +20,7 @@ const Header = (): JSX.Element => {
           </NavLink>
         </li>
       </ul>
+      <Favorite />
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import FavoritePage from 'containers/favorite-page';
 import HomePage from 'containers/home-page';
 import NotFoundPage from 'containers/not-found-page';
 import PeoplePage from 'containers/people-page';
@@ -18,6 +19,11 @@ const routesConfig = [
     path: '/people/:id',
     exact: true,
     component: PersonPage,
+  },
+  {
+    path: '/favorites',
+    exact: true,
+    component: FavoritePage,
   },
   {
     path: '/not-found',

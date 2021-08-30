@@ -3,6 +3,7 @@ import PersonLinkBack from 'components/person-page/person-link-back';
 import PersonPhotoComponent from 'components/person-page/person-photo';
 import UiLoading from 'components/UI/UILoading';
 import { API_PERSON } from 'constants/api';
+import useTypeSelector from 'hooks/useTypeSelector';
 import React, { Suspense, useEffect, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import { getPeopleImages } from 'services/getPeopleData';
@@ -14,9 +15,13 @@ const PersonFilmsComponent = React.lazy(() => import('components/person-page/per
 const PersonPage = (): JSX.Element => {
   const [errorApi, setErrorApi] = useState(false);
   const [personInfo, setPersonInfo] = useState<Res[] | null>(null);
+  const [personId, setPersonId] = useState<string>('');
   const [personName, setPersonName] = useState<string>('');
   const [personPhoto, setPersonPhoto] = useState<string>('');
   const [personFilms, setPersonFilms] = useState<string[]>([]);
+  const [personFavorite, setPersonFavorite] = useState<boolean>(false);
+
+  const { favoritePerson } = useTypeSelector(state => state.favoritePerson);
 
   const match = useRouteMatch<MatchProps>();
 
@@ -24,6 +29,14 @@ const PersonPage = (): JSX.Element => {
     (async () => {
       const { id } = match.params;
       const res = await getApiResource(`${API_PERSON}/${id}/`);
+
+      if (favoritePerson[id]) {
+        setPersonFavorite(true);
+      } else {
+        setPersonFavorite(false);
+      }
+
+      setPersonId(id);
       if (res) {
         setPersonInfo([
           { title: 'Height', data: (res as PersonInfoApi).height },
@@ -49,7 +62,13 @@ const PersonPage = (): JSX.Element => {
       <div className="person__wrapper">
         <span className="person__name">{personName}</span>
         <div className="person__container">
-          <PersonPhotoComponent personPhoto={personPhoto} personName={personName} />
+          <PersonPhotoComponent
+            personPhoto={personPhoto}
+            personName={personName}
+            personId={personId}
+            personFavorite={personFavorite}
+            setPersonFavorite={setPersonFavorite}
+          />
           {personInfo && <PersonInfoComponent personInfo={personInfo} />}
           {personFilms && (
             <Suspense fallback={<UiLoading theme="blue" isShadow />}>

@@ -103,6 +103,7 @@ module.exports = {
       routes: path.resolve(__dirname, './src/routes/'),
       static: path.resolve(__dirname, './src/static/'),
       hooks: path.resolve(__dirname, './src/hooks/'),
+      store: path.resolve(__dirname, './src/store/'),
     },
     extensions: ['.tsx', '.ts', '.js'],
   },
