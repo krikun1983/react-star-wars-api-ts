@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import bookmark from 'assets/images/favorites/bookmark.svg';
 import { Link } from 'react-router-dom';
 import useTypeSelector from 'hooks/useTypeSelector';
+import { Stars } from 'store/types/favorite';
 
 const Favorite = (): JSX.Element => {
   const [count, setCount] = useState<string>('0');
@@ -9,7 +10,7 @@ const Favorite = (): JSX.Element => {
   const { favoritePerson } = useTypeSelector(state => state.favoritePerson);
 
   useEffect(() => {
-    const { length } = Object.keys(favoritePerson);
+    const { length } = Object.keys(favoritePerson as Stars);
     if (length.toString().length > 2) {
       setCount('...');
     } else {

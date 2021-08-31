@@ -6,6 +6,10 @@ export interface FavoritePersonState {
   favoritePerson: Stars;
 }
 
+export interface FavoritePersonNew {
+  [key: string]: Stars;
+}
+
 export interface FavoritePersonAction {
   type: string;
   payload: Stars | string;

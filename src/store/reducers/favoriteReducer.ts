@@ -1,8 +1,9 @@
 import { ADD_PERSON_TO_FAVORITE, REMOVE_PERSON_TO_FAVORITE } from 'store/constants';
 import { FavoritePersonAction, FavoritePersonState, Stars } from 'store/types/favorite';
+import { getLocalStorage } from 'utils/localStorage';
 
 const initialState: FavoritePersonState = {
-  favoritePerson: {},
+  favoritePerson: getLocalStorage('store') as Stars,
 };
 
 const favoriteReducer = (state = initialState, action: FavoritePersonAction): FavoritePersonState => {
