@@ -8,6 +8,7 @@ import Routing from 'types/routing';
 import { Provider } from 'react-redux';
 import store from 'store';
 import 'assets/scss/app.scss';
+import { ThemeProvider } from 'context/theme-provider';
 
 const App = (): JSX.Element => {
   return (
@@ -28,7 +29,9 @@ const App = (): JSX.Element => {
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </Provider>,
   document.getElementById('root'),
 );
