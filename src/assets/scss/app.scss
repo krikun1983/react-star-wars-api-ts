@@ -6,6 +6,7 @@
 @import 'errors';
 @import 'not-found';
 @import 'loader';
+@import 'choose';
 
 img {
   display: block;
@@ -17,6 +18,27 @@ img {
   line-height: 1.7em;
   text-shadow: 0 0 2px $color-black;
   transition: color $transition;
+}
+
+.header__light {
+  color: $theme-light-header;
+}
+.header__dark {
+  color: $theme-dark-header;
+}
+.header__middle {
+  color: $theme-middle-header;
+}
+.header__default {
+  color: $theme-default-header;
+}
+
+.header_logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 30px;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .container {

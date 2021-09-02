@@ -10,6 +10,26 @@ $color-blue: #6a83fb;
 $color-violet: #ae72c2;
 
 $border-radius-small: 3px;
-$theme-default-header: #cccc46;
-$theme-default-bgImage: url('../../../public/static/bg.jpg');
+
+$theme-light-header: #dfe2dd;
+$theme-dark-header: #ca6c6f;
+$theme-middle-header: #cccc46;
+$theme-default-header: $theme-middle-header;
+
+$theme-light-bgImage: #dfe2dd;
+$theme-dark-bgImage: #ca6c6f;
+$theme-middle-bgImage: url('../../../public/static/bg.jpg');
+$theme-default-bgImage: $theme-middle-bgImage;
+
 $transition: 0.4s;
+
+$border-radius: 10px;
+$color-light: #29e52d;
+$color-dark: #d82228;
+$color-middle: #ff0;
+$color-shadow-light: rgba(41, 229, 45, 0.4);
+$color-shadow-dark: rgba(216, 34, 40, 0.4);
+$color-shadow-middle: rgba(224, 224, 81, 0.4);
+
+$box-shadow-black: 0 16px 24px 2px rgba(0, 0, 0, 0.5), 0 6px 30px 5px rgba(0, 0, 0, 0.1),
+  0 8px 10px -5px rgba(0, 0, 0, 0.2);

@@ -4,15 +4,29 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
+.body {
+  min-width: 100ch;
+  height: 100vh;
   font-size: 16px;
   font-family: sans-serif;
   background-color: $color-dark-gray;
-  background-image: $theme-default-bgImage;
   background-repeat: no-repeat;
   background-position: top left;
   background-size: cover;
   background-attachment: fixed;
+
+  &__light {
+    background-image: linear-gradient(to right bottom, #051937, #162454, #312d70, #533389, #7a359f);
+  }
+  &__dark {
+    background-image: linear-gradient(to right bottom, #000, #160b11, #20141e, #281b2e, #2b2440);
+  }
+  &__middle {
+    background-image: $theme-middle-bgImage;
+  }
+  &__default {
+    background-image: $theme-default-bgImage;
+  }
 }
 
 * {

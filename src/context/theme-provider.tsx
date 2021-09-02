@@ -8,7 +8,7 @@ export const THEME_MIDDLE = 'middle';
 const ThemeContext = React.createContext<UseThemeProps>({ theme: THEME_DARK });
 
 export const ThemeProvider = ({ children, ...props }: ChildrenProps): JSX.Element => {
-  const [theme, setTheme] = useState<string>('');
+  const [theme, setTheme] = useState<string>('default');
 
   const change = (name: string): void => {
     setTheme(name);

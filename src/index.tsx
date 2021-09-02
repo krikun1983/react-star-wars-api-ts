@@ -8,11 +8,13 @@ import Routing from 'types/routing';
 import { Provider } from 'react-redux';
 import store from 'store';
 import 'assets/scss/app.scss';
-import { ThemeProvider } from 'context/theme-provider';
+import { ThemeProvider, useTheme } from 'context/theme-provider';
 
 const App = (): JSX.Element => {
+  const isTheme = useTheme();
+
   return (
-    <>
+    <div className={`body body__${isTheme.theme}`}>
       <Router>
         <div className="wrapper">
           <Header />
@@ -23,7 +25,7 @@ const App = (): JSX.Element => {
           </Switch>
         </div>
       </Router>
-    </>
+    </div>
   );
 };
 
