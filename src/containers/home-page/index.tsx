@@ -7,7 +7,7 @@ const HomePage = (): JSX.Element => {
 
   return (
     <>
-      <div className={`header__text header__${isTheme.theme}`}>HomePage</div>
+      <h2 className={`header__text header__${isTheme.theme}`}>HomePage</h2>
       <ChooseSide />
     </>
   );

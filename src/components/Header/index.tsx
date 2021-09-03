@@ -42,6 +42,9 @@ const Header = (): JSX.Element => {
           <NavLink to="/people/?page=1">People</NavLink>
         </li>
         <li>
+          <NavLink to="/search">Search</NavLink>
+        </li>
+        <li>
           <NavLink to="/not-found" exact>
             Not Found
           </NavLink>
