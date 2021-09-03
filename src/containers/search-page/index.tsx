@@ -1,10 +1,12 @@
 import SearchPageInfo from 'components/search-page/search-page-info';
 import { API_SEARCH } from 'constants/api';
-import React, { ChangeEvent, useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { getPeopleId, getPeopleImages } from 'services/getPeopleData';
 import { PeopleListState, PeopleResultsBody } from 'types/people-list';
 import getApiResource from 'utils/network';
 import { debounce } from 'lodash';
+import UIInput from 'components/UI/UIInput';
+import icon_cancel from 'assets/images/cancel/cancel.svg';
 
 const SearchPage = (): JSX.Element => {
   const [errorApi, setErrorApi] = useState(false);
@@ -41,15 +43,30 @@ const SearchPage = (): JSX.Element => {
     [],
   );
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setInputSearchValue(e.target.value);
-    debounceGetResponse(e.target.value);
+  const handleInputChange = (value: string) => {
+    setInputSearchValue(value);
+    debounceGetResponse(value);
   };
 
   return (
     <>
       <h2 className="header__text">Search</h2>
-      <input type="text" value={inputSearchValue} onChange={handleInputChange} placeholder="input characters's name" />
+      <div className="input__search_wrapper">
+        <UIInput
+          classes="input__search"
+          value={inputSearchValue}
+          type="text"
+          handleInputChange={handleInputChange}
+          placeholder="input characters's name"
+        />
+        <img
+          src={icon_cancel}
+          alt="clear"
+          className={`input__clear ${!inputSearchValue && 'input__clear_disabled'}`}
+          onClick={() => inputSearchValue && handleInputChange('')}
+          role="presentation"
+        />
+      </div>
       <SearchPageInfo people={people} />
     </>
   );
