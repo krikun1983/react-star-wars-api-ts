@@ -7,8 +7,8 @@ import routesConfig from 'routes/routesConfig';
 import Routing from 'types/routing';
 import { Provider } from 'react-redux';
 import store from 'store';
-import 'assets/scss/app.scss';
 import { ThemeProvider, useTheme } from 'context/theme-provider';
+import 'assets/scss/app.scss';
 
 const App = (): JSX.Element => {
   const isTheme = useTheme();
